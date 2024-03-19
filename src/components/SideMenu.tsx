@@ -1,9 +1,12 @@
-export default function () {
+type Content = { name: string; price: number; isVerified: boolean };
+type Menu = { title: string; buttonText: string; content: Content[] };
+
+export default function SideMenu({ menu }: { menu: Menu }) {
   return (
-    <div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div className="flex ">
+      <div className="flex-col w-[10%]  border bg-slate-500">
+        <button>{menu.buttonText}</button>
+      </div>
     </div>
   );
 }
