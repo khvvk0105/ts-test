@@ -1,5 +1,6 @@
 import SideMenu from "@/components/SideMenu";
 import { useState } from "react";
+import ShowObject from "@/components/ShowObject";
 
 export default function Home() {
   const [menu, setMenu] = useState<String>("");
@@ -44,9 +45,13 @@ export default function Home() {
   return (
     <div>
       <div>
-        {" "}
         {sideMenus.map((menu) => {
           return <SideMenu menu={menu} />;
+        })}
+      </div>
+      <div>
+        {sideMenus.map((data) => {
+          return <ShowObject data={data} />;
         })}
       </div>
     </div>
